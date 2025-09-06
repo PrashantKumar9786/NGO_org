@@ -241,7 +241,7 @@ export const Programs = () => {
       id: 13,
       title: "Voter Awareness Campaign",
       icon: FaVoteYea,
-      category: "Civic",
+      category: "Awareness",
       description:
         "Making people aware about voting importance for strong democracy through rallies and programs.",
       details:
@@ -312,11 +312,11 @@ export const Programs = () => {
 
     "Empowerment",
     "Health",
-    "Education",
+    "Skill Development",
     "Environment",
     "Sports",
     "Safety",
-    "Civic",
+    "Awareness",
     "Legal",
     "Social",
     "Cultural",
@@ -325,6 +325,20 @@ export const Programs = () => {
   const filteredPrograms =
     selectedCategory === "All"
       ? programs
+      : selectedCategory === "Skill Development"
+      ? programs.filter(program => 
+          program.title === "Educational Tour" || 
+          program.title === "Poverty Alleviation Programs"
+        )
+      : selectedCategory === "Awareness"
+      ? programs.filter(program => 
+          program.title.includes('Awareness') || 
+          program.title === 'Voter Awareness Campaign' ||
+          program.title === 'Legal Awareness Campaign' ||
+          program.title === 'Road Safety Awareness' ||
+          program.title === 'Environment Awareness' ||
+          program.title === 'Health Awareness & Ayushman Card'
+        )
       : programs.filter((program) => program.category === selectedCategory);
 
   return (
