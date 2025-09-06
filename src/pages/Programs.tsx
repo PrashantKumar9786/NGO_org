@@ -312,7 +312,10 @@ export const Programs = () => {
 
     "Empowerment",
     "Health",
+<<<<<<< HEAD
     "Education",
+=======
+>>>>>>> e863d4a819d79cbcbd819d53a87389ba4dc3a931
     "Skill Development",
     "Environment",
     "Sports",
@@ -327,6 +330,7 @@ export const Programs = () => {
     selectedCategory === "All"
       ? programs
       : selectedCategory === "Skill Development"
+<<<<<<< HEAD
       ? programs.filter(
           (program) => program.title === "National Handicraft Development"
         )
@@ -346,6 +350,20 @@ export const Programs = () => {
             program.title.includes("Education") ||
             program.title === "Educational Tour" ||
             program.title === "Poverty Alleviation Programs"
+=======
+      ? programs.filter(program => 
+          program.title === "Educational Tour" || 
+          program.title === "Poverty Alleviation Programs"
+        )
+      : selectedCategory === "Awareness"
+      ? programs.filter(program => 
+          program.title.includes('Awareness') || 
+          program.title === 'Voter Awareness Campaign' ||
+          program.title === 'Legal Awareness Campaign' ||
+          program.title === 'Road Safety Awareness' ||
+          program.title === 'Environment Awareness' ||
+          program.title === 'Health Awareness & Ayushman Card'
+>>>>>>> e863d4a819d79cbcbd819d53a87389ba4dc3a931
         )
       : programs.filter((program) => program.category === selectedCategory);
 
